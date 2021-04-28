@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { AuthServiceService } from '../auth-service.service';
 
 @Component({
@@ -11,20 +12,20 @@ import { AuthServiceService } from '../auth-service.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  closeResult = '';mail:any='drgr';pass:any='sdgsdf';
+  closeResult = '';
+  mail:any='drgr';
+  pass:any='sdgsdf';
   x="";
-
   isAuthenticated;
   myForm: any;
-  // submitted: boolean = false;
-  // loginForm: FormGroup;
-
+  
   constructor(
     private modalService: NgbModal,
     private auth: AuthServiceService,
-    private router: Router,private formBuilder: FormBuilder
-    // private formBuilder: FormBuilder
-    ) { }
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
+        ) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
@@ -57,10 +58,10 @@ export class HeaderComponent implements OnInit {
 
   onSubmit() {
    if(this.auth.login(this.myForm.controls.mail.value,this.myForm.controls.pass.value)){
-     //toster successfully login
+     this.toastr.success('successfully login');
    } 
    else{
-     //toster invaild creds
+     this.toastr.error('Invalid Credential')
    }
     this.checkAuthentication();
     // close modal
