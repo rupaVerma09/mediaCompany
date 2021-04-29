@@ -19,7 +19,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="navbar-item">
-        <a class="nav-link" (click)="openSongList(x,content)" style="cursor: pointer;" 
+        <a class="nav-link" (click)="openForm(x,content)" style="cursor: pointer;" 
         *ngIf="!isAuthenticated">Login</a>
         <a class="nav-link" (click)="onLogout()" style="cursor: pointer;" 
         *ngIf="isAuthenticated">Logout</a>
@@ -41,15 +41,15 @@
     <form [formGroup]="myForm" (submit)="onSubmit()">
       <div  class="form-group">
         <label for="exampleInputEmail1">Email</label>
-        <input formControlName="mail"    type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input formControlName="mail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input formControlName="pass"    type="password" class="form-control" id="exampleInputPassword1">
+        <input formControlName="pass" type="password" class="form-control" id="exampleInputPassword1">
       </div>
       
-      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()" (click)="modal.dismiss('Cross click')">Submit</button>
     </form>
 
   </div>

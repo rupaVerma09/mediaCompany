@@ -28,8 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
-
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

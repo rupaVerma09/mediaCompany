@@ -35,10 +35,7 @@ export class HeaderComponent implements OnInit {
     this.checkAuthentication();    
   }
 
-  openSongList(x,content){
-
-    // this.selectedMovie = movie;
-    // document.getElementById('#myModal').modal('show');
+  openForm(x,content){
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
