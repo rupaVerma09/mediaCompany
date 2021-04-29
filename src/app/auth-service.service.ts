@@ -23,6 +23,7 @@ dbArray:any=[];
       for(let i=0;i<this.dbArray.length; i++){
         if(this.dbArray[i].userid===user && this.dbArray[i].password===password){
           localStorage.setItem('isAuthenticated', 'true');
+          this.setUserName(this.dbArray[i].username);
           flag= true;
         }
       }
@@ -40,5 +41,13 @@ dbArray:any=[];
 
   getDb(){
    return JSON.parse(localStorage.getItem('userDb'));
+  }
+
+  getUserName(){
+    return localStorage.getItem('userName');
+  }
+
+  setUserName(name){
+    localStorage.setItem('userName', name);
   }
 }

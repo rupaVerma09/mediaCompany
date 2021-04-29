@@ -22,7 +22,7 @@
         <a class="nav-link" (click)="openForm(x,content)" style="cursor: pointer;" 
         *ngIf="!isAuthenticated">Login</a>
         <a class="nav-link" (click)="onLogout()" style="cursor: pointer;" 
-        *ngIf="isAuthenticated">Logout</a>
+        *ngIf="isAuthenticated">{{userName}}/Logout</a>
 
       </li>
     </ul>
@@ -49,7 +49,7 @@
         <input formControlName="pass" type="password" class="form-control" id="exampleInputPassword1">
       </div>
       
-      <button type="submit" class="btn btn-primary" (click)="onSubmit()" (click)="modal.dismiss('Cross click')">Submit</button>
+      <button type="submit" class="btn btn-primary"  (click)="modal.dismiss('Cross click')">Submit</button>
     </form>
 
   </div>

@@ -13,11 +13,12 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class HeaderComponent implements OnInit {
   closeResult = '';
-  mail:any='drgr';
-  pass:any='sdgsdf';
+  mail:any='';
+  pass:any='';
   x="";
   isAuthenticated;
   myForm: any;
+  userName:any;
   
   constructor(
     private modalService: NgbModal,
@@ -55,7 +56,8 @@ export class HeaderComponent implements OnInit {
 
   onSubmit() {
    if(this.auth.login(this.myForm.controls.mail.value,this.myForm.controls.pass.value)){
-     this.toastr.success('successfully login');
+     this.toastr.success('successfully logged in');
+     this.userName = this.auth.getUserName();
    } 
    else{
      this.toastr.error('Invalid Credential')
