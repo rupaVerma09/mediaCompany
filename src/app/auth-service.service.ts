@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthServiceService {
-dbArray:any=[];
+ dbArray:any=[];
+
   constructor() { }
 
 
@@ -29,7 +30,6 @@ dbArray:any=[];
       }
       return flag;
   }
-
 
   logout(){
     localStorage.setItem('isAuthenticated', 'false');

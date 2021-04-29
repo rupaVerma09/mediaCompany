@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GalleryPageComponent } from './gallery-page/gallery-page.component';
 import { AboutComponent } from './about/about.component';
-import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     GalleryPageComponent,
     AboutComponent,
-    LoginComponent,
     HeaderComponent,
     FooterComponent
   ],
